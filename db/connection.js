@@ -8,8 +8,9 @@ const mongoose = require('mongoose');
 //
 // Atlas example:
 // mongodb+srv://<user>:<password>@<cluster-host>/PokemonDB?retryWrites=true&w=majority
-const CONNECTION_STRING = process.env.MONGO_URI ||
-  'mongodb+srv://girish_ganigar1991:Swimmingpool1991@cluster0.yyhv51h.mongodb.net/?appName=Cluster0';
+//
+// Load from environment variable - NEVER hardcode credentials
+const CONNECTION_STRING = process.env.MONGO_URI;
 
 function connect() {
   return mongoose.connect(CONNECTION_STRING)
